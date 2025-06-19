@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UserDataController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -31,6 +32,9 @@ Route::post('/nuevo_usuario', [UsuarioController::class, 'nuevo_usuario']);
 Route::put('/mod_usuario/{id}', [UsuarioController::class, 'mod_usuario']);
 
 Route::delete('/borrar_usuario/{id}', [UsuarioController::class, 'borrar_usuario']);
+
+
+Route::post('/receive-data', [UserDataController::class, 'processData']);
 
 
 /*
